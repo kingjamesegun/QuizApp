@@ -1,0 +1,66 @@
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar .nav__text {
+  margin: 30px 50px;
+}
+
+.navbar .nav__bar {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+
+@media (max-width: 425px) {
+  .navbar .nav__bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.navbar .nav__links .nav__ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 50px 0 0;
+  padding: 0;
+}
+
+.navbar .nav__links .nav__ul .nav__li {
+  list-style: none;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.navbar .nav__links .nav__ul .nav__li:hover {
+  background-color: #0f0744;
+}
+
+.navbar .nav__links .nav__ul .nav__li a {
+  text-decoration: none;
+  padding: 1rem;
+  display: block;
+  color: #0f0744;
+  font-size: 14px;
+}
+
+.navbar .nav__links .nav__ul .nav__li a:hover {
+  color: #fff;
+}
+
+.navbar .nav__links .nav__ul .btn__demo {
+  border: 1px solid #0f0744;
+  color: #fff !important;
+}
+/*# sourceMappingURL=Navbar.css.map */

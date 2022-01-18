@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Navbar from './compoents/Navbar';
 
 function App() {
 
@@ -14,7 +15,8 @@ function App() {
     
   }
   return (
-    <div className="App">
+    <div className='App'>
+      <Navbar/>
       Quiz
     </div>
   );
