@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navbar from './compoents/Navbar';
+import HomePage from './Pages/HomePage';
 
 function App() {
 
@@ -15,9 +16,9 @@ function App() {
     
   }
   return (
-    <div className='App'>
+    <div className=''>
       <Navbar/>
-      Quiz
+      <HomePage/>
     </div>
   );
 }
