@@ -1,24 +1,40 @@
-import React from 'react'
-
+import React from 'react';
 
 // https://opentdb.com/api.php?amount=10&type=multiple
-type Props={
-    question: string;
-    answer: string[];
-    callback: any;
-    userAnswer: string;
-    questionNr: number;
-    totalQuestions: number;
-}
+type Props = {
+	question: string;
+	answers: string[];
+	callback: any;
+	userAnswer: any;
+	questionNr: number;
+	totalQuestions: number;
+};
 
-const QuestionCard: React.FC<Props> =({question, answer, callback, userAnswer, questionNr, totalQuestions})=> {
+const QuestionCard: React.FC<Props> = ({
+	question,
+	answers,
+	callback,
+	userAnswer,
+	questionNr,
+	totalQuestions,
+}) => {
+	return (
+		<div className='card'>
+			<p className='card__number'>
+				Question: {questionNr} / {totalQuestions}
+			</p>
+			<p dangerouslySetInnerHTML={{ __html: question }} />
+			<div>
+				{answers.map((answer) => (
+					<div>
+						<button disabled={userAnswer} onClick={callback}>
+							<span dangerouslySetInnerHTML={{ __html: answer }} />
+						</button>
+					</div>
+				))}
+			</div>
+		</div>
+	);
+};
 
-
-    return (
-        <div>
-            Question Cardx
-        </div>
-    )
-}
-
-export default QuestionCard
+export default QuestionCard;
