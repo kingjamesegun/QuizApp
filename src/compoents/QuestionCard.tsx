@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { MouseEvent } from 'react';
+import { AnswerObject } from '../Pages/QuizPage';
+import '../styles/components/QuestionCard.css';
 
 // https://opentdb.com/api.php?amount=10&type=multiple
 type Props = {
 	question: string;
 	answers: string[];
-	callback: any;
-	userAnswer: any;
-	questionNr: number;
-	totalQuestions: number;
+	callback: (e: MouseEvent<HTMLButtonElement>) => void;
+	userAnswer: AnswerObject | undefined;
 };
 
 const QuestionCard: React.FC<Props> = ({
@@ -15,19 +15,22 @@ const QuestionCard: React.FC<Props> = ({
 	answers,
 	callback,
 	userAnswer,
-	questionNr,
-	totalQuestions,
 }) => {
 	return (
-		<div className='card'>
-			<p className='card__number'>
-				Question: {questionNr} / {totalQuestions}
-			</p>
-			<p dangerouslySetInnerHTML={{ __html: question }} />
-			<div>
+		<div className='quiz__card'>
+			<p
+				dangerouslySetInnerHTML={{ __html: question }}
+				className='card__question'
+			/>
+			<div className='card__answer'>
 				{answers.map((answer) => (
-					<div key={answer}>
-						<button disabled={userAnswer} value={answer} onClick={callback}>
+					<div key={answer} className='answer'>
+						<button
+							disabled={userAnswer ? true : false}
+							value={answer}
+							onClick={callback}
+							className='card__btn'
+						>
 							<span dangerouslySetInnerHTML={{ __html: answer }} />
 						</button>
 					</div>

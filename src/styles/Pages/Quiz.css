@@ -1,0 +1,24 @@
+.quiz {
+  padding: 2% 5%;
+}
+.quiz .quiz__start {
+  text-align: center;
+}
+.quiz .quiz__start .start__h3 {
+  margin-top: 10px;
+  color: #0f0744;
+}
+.quiz .quiz__start .start__btn {
+  padding: 8px 30px;
+  border: none;
+  background-color: #F26335;
+  color: #fff;
+  border-radius: 5px;
+}
+.quiz .quiz__score {
+  text-align: center;
+}
+.quiz .loader {
+  text-align: center;
+  margin-top: 40px;
+}/*# sourceMappingURL=Quiz.css.map */

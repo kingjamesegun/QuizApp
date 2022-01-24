@@ -1,0 +1,19 @@
+.quiz__card {
+  padding: 0 2%;
+}
+.quiz__card .card__question {
+  color: #0F0744;
+  font-size: 20px;
+  text-align: center;
+}
+.quiz__card .card__answer {
+  margin: 2% 5%;
+  display: flex;
+}
+.quiz__card .card__answer .answer {
+  margin: 10px 40px;
+}
+.quiz__card .card__answer .answer .card__btn {
+  height: 100px;
+  width: 300px;
+}/*# sourceMappingURL=QuestionCard.css.map */

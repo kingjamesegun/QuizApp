@@ -1,10 +1,13 @@
 import React, { MouseEvent, useState } from 'react';
 import { Diffculty, fetchQuizQuestions, QuestionState } from '../API';
 import QuestionCard from '../compoents/QuestionCard';
+import BallIcon from '../assets/Ball.svg';
+import StartIllus from '../assets/startnow.svg';
+import '../styles/Pages/Quiz.css';
 
 const total_Questions = 10;
 
-type AnswerObject = {
+export type AnswerObject = {
 	question: string;
 	answer: string;
 	correct: boolean;
@@ -22,7 +25,7 @@ function QuizPage() {
 	const [userAnswers, setUserAnswers] = useState<AnswerObject[]>([]);
 
 	// console.log(fetchQuizQuestions(total_Questions, Diffculty.EASY));
-	console.log(questions);
+	// console.log(questions);
 
 	// ftn start the quiz
 	const startQuiz = async () => {
@@ -66,39 +69,72 @@ function QuizPage() {
 	};
 
 	// ftn shows next question
-	const nextQuestion = () => {};
+	const nextQuestion = () => {
+		const nextQuestion = number + 1;
+
+		if (nextQuestion === total_Questions) {
+			setGameOver(true);
+		} else {
+			setNumber(nextQuestion);
+		}
+	};
 
 	return (
 		<div className='quiz'>
 			{/* https://opentdb.com/api.php?amount=10&type=multiple */}
 			{gameOver || userAnswers.length === total_Questions ? (
-				<div className='quiz__start' onClick={startQuiz}>
-					Start Quiz
+				<div className='quiz__start'>
+					<img className='start__img' src={StartIllus} alt='start img' />
+					<h3 className='start__h3'>Hint:</h3>
+					<p className='start__p'>
+						The quiz consits of 10 questions from any field of study. <br />A
+						quiz is 10marks, summing to be 100marks in total.
+					</p>
+					<button className='start__btn' onClick={startQuiz}>
+						Start Quiz
+					</button>
 				</div>
 			) : null}
 
-			{!gameOver ? <p className='quiz__score'>Score:</p> : null}
+			{!gameOver && !loading ? (
+				<p className='quiz__score'>
+					Score:{score}/{total_Questions}
+				</p>
+			) : null}
 
-			{loading && <p className=''>Loading Questions</p>}
+			{/* using LOADING.IO */}
+			{loading && (
+				<div className='loader'>
+					<img src={BallIcon} alt='Loader' />
+					<p className='quiz__p'>Let's Go</p>
+				</div>
+			)}
 
 			{!loading && !gameOver && (
 				<QuestionCard
-					questionNr={number + 1}
-					totalQuestions={total_Questions}
 					question={questions[number].question}
 					answers={questions[number].answers}
 					userAnswer={userAnswers ? userAnswers[number] : undefined}
 					callback={checkAnswer}
 				/>
 			)}
-			{!gameOver &&
-			!loading &&
-			userAnswers.length === number + 1 &&
-			number !== total_Questions - 1 ? (
-				<button className='quiz__next' onClick={nextQuestion}>
-					Next
-				</button>
-			) : null}
+
+			<div className='quiz__function'>
+				{!gameOver && !loading ? (
+					<p className='card__number'>
+						Question: {number + 1} / {total_Questions}
+					</p>
+				) : null}
+
+				{!gameOver &&
+				!loading &&
+				userAnswers.length === number + 1 &&
+				number !== total_Questions - 1 ? (
+					<button className='quiz__next' onClick={nextQuestion}>
+						Next
+					</button>
+				) : null}
+			</div>
 		</div>
 	);
 }
