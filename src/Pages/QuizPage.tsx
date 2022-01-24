@@ -5,7 +5,7 @@ import BallIcon from '../assets/Ball.svg';
 import StartIllus from '../assets/startnow.svg';
 import '../styles/Pages/Quiz.css';
 
-const total_Questions = 10;
+export const total_Questions = 10;
 
 export type AnswerObject = {
 	question: string;
@@ -103,7 +103,7 @@ function QuizPage() {
 			) : null}
 
 			{/* using LOADING.IO */}
-			{loading && (
+			{!gameOver && loading && (
 				<div className='loader'>
 					<img src={BallIcon} alt='Loader' />
 					<p className='quiz__p'>Let's Go</p>
@@ -116,6 +116,7 @@ function QuizPage() {
 					answers={questions[number].answers}
 					userAnswer={userAnswers ? userAnswers[number] : undefined}
 					callback={checkAnswer}
+					userNumber = {userAnswers.length}
 				/>
 			)}
 
@@ -135,6 +136,10 @@ function QuizPage() {
 					</button>
 				) : null}
 			</div>
+
+			{ userAnswers.length === total_Questions? (
+				<div className='analysis'>Analysis</div>
+			): null}
 		</div>
 	);
 }

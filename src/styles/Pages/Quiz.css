@@ -21,4 +21,21 @@
 .quiz .loader {
   text-align: center;
   margin-top: 40px;
+}
+.quiz .quiz__function {
+  display: flex;
+  margin: 0 8%;
+  justify-content: space-between;
+}
+.quiz .quiz__function .card__number {
+  font-size: 18px;
+  font-weight: medium;
+  color: #0f0744;
+}
+.quiz .quiz__function .quiz__next {
+  background-color: #F26335;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 50px;
+  border: 1px solid #F26335;
 }/*# sourceMappingURL=Quiz.css.map */

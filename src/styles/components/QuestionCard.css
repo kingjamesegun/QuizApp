@@ -8,12 +8,20 @@
 }
 .quiz__card .card__answer {
   margin: 2% 5%;
-  display: flex;
 }
 .quiz__card .card__answer .answer {
-  margin: 10px 40px;
+  margin: 20px 0;
 }
 .quiz__card .card__answer .answer .card__btn {
-  height: 100px;
-  width: 300px;
+  width: 100%;
+  text-align: left;
+  padding: 0 20px;
+  height: 60px;
+  border-radius: 5px;
+  background-color: #EEF2FA;
+  border: 1px solid #0F0744;
+}
+
+.hide {
+  display: none;
 }/*# sourceMappingURL=QuestionCard.css.map */

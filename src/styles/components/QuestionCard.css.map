@@ -1,1 +1,1 @@
-{"version":3,"sources":["QuestionCard.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;AACJ;AAAI;EACI,cAAA;EACA,eAAA;EACA,kBAAA;AAER;AAAI;EACI,aAAA;EACA,aAAA;AAER;AADQ;EACI,iBAAA;AAGZ;AAFY;EACI,aAAA;EACA,YAAA;AAIhB","file":"QuestionCard.css"}
+{"version":3,"sources":["QuestionCard.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;AACJ;AAAI;EACI,cAAA;EACA,eAAA;EACA,kBAAA;AAER;AAAI;EACI,aAAA;AAER;AADQ;EACI,cAAA;AAGZ;AAFY;EACI,WAAA;EACA,gBAAA;EACA,eAAA;EACA,YAAA;EACA,kBAAA;EACA,yBAAA;EACA,yBAAA;AAIhB;;AAEA;EACI,aAAA;AACJ","file":"QuestionCard.css"}
