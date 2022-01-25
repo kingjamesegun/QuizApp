@@ -18,6 +18,9 @@
 .quiz .quiz__score {
   text-align: center;
 }
+.quiz .hide {
+  display: none;
+}
 .quiz .loader {
   text-align: center;
   margin-top: 40px;
@@ -32,10 +35,18 @@
   font-weight: medium;
   color: #0f0744;
 }
+.quiz .quiz__function .hide {
+  display: none;
+}
 .quiz .quiz__function .quiz__next {
   background-color: #F26335;
   color: #fff;
   border-radius: 5px;
   padding: 10px 50px;
   border: 1px solid #F26335;
+}
+.quiz .analysis {
+  width: 50%;
+  margin: 0 auto;
+  box-shadow: 2px 2px;
 }/*# sourceMappingURL=Quiz.css.map */

@@ -19,7 +19,6 @@ function QuizPage() {
 	const [questions, setQuestions] = useState<QuestionState[]>([]);
 	// number user is on
 	const [number, setNumber] = useState(0);
-	const [answers, setAnswers] = useState<AnswerObject[]>([]);
 	const [score, setScore] = useState(0);
 	const [gameOver, setGameOver] = useState(true);
 	const [userAnswers, setUserAnswers] = useState<AnswerObject[]>([]);
@@ -39,7 +38,6 @@ function QuizPage() {
 		setQuestions(newQuestions);
 		setScore(0);
 		setUserAnswers([]);
-		setAnswers([]);
 
 		setNumber(0);
 		setLoading(false);
@@ -82,7 +80,7 @@ function QuizPage() {
 	return (
 		<div className='quiz'>
 			{/* https://opentdb.com/api.php?amount=10&type=multiple */}
-			{gameOver || userAnswers.length === total_Questions ? (
+			{gameOver ? (
 				<div className='quiz__start'>
 					<img className='start__img' src={StartIllus} alt='start img' />
 					<h3 className='start__h3'>Hint:</h3>
@@ -97,7 +95,7 @@ function QuizPage() {
 			) : null}
 
 			{!gameOver && !loading ? (
-				<p className='quiz__score'>
+				<p className={`quiz__score ${userAnswers.length === total_Questions ? "hide" : null}`}>
 					Score:{score}/{total_Questions}
 				</p>
 			) : null}
@@ -116,13 +114,17 @@ function QuizPage() {
 					answers={questions[number].answers}
 					userAnswer={userAnswers ? userAnswers[number] : undefined}
 					callback={checkAnswer}
-					userNumber = {userAnswers.length}
+					userNumber={userAnswers.length}
 				/>
 			)}
 
 			<div className='quiz__function'>
 				{!gameOver && !loading ? (
-					<p className='card__number'>
+					<p
+						className={`card__number' ${
+							userAnswers.length === total_Questions ? 'hide' : null
+						}`}
+					>
 						Question: {number + 1} / {total_Questions}
 					</p>
 				) : null}
@@ -137,9 +139,47 @@ function QuizPage() {
 				) : null}
 			</div>
 
-			{ userAnswers.length === total_Questions? (
-				<div className='analysis'>Analysis</div>
-			): null}
+			{!loading && userAnswers.length === total_Questions ? (
+				<div className='analysis'>
+					<div className='analysis__score'>Score</div>
+					<h1 className='score'>{score * 10}%</h1>
+					<div className='anaysis__remark'>
+						{(() => {
+							if (score * 10 <= 40) {
+								return (
+									<div className='remark__bad'>
+										Too Poor, You can do better!
+									</div>
+								);
+							} else if (score * 10 >= 40 && score * 10 <= 70) {
+								return (
+									<div className='remark__better'>
+										Good Job, You are almost there!
+									</div>
+								);
+							} else {
+								return (
+									<div className='remark__good'>Excellent, Great Job!</div>
+								);
+							}
+						})()}
+					</div>
+					<div className='analysis__mark'>
+						<div className='mark__title'>Score Analysis</div>
+						<div className='mark__info'>
+							<div className='info__correcct'>Correct Answer(s): {score}</div>
+							<div className='info__incorrecct'>
+								InCorrect Answer(s): {10 - score}
+							</div>
+						</div>
+					</div>
+					<div className='play__again'>
+						<button className='again__btn' onClick={startQuiz}>
+							Play Again
+						</button>
+					</div>
+				</div>
+			) : null}
 		</div>
 	);
 }

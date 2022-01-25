@@ -17,6 +17,9 @@
     .quiz__score{
         text-align: center;
     }
+    .hide{
+        display: none;
+    }
     .loader{
         text-align: center;
         margin-top: 40px;
@@ -30,6 +33,9 @@
             font-weight: medium;
             color: #0f0744;
         }
+        .hide{
+            display: none;
+        }
         .quiz__next{
             background-color: #F26335;
             color: #fff;
@@ -37,5 +43,10 @@
             padding: 10px 50px;
             border: 1px solid #F26335;
         }
+    }
+    .analysis{
+        width: 50%;
+        margin: 0 auto;
+        box-shadow: 2px 2px ;
     }
 }
