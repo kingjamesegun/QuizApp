@@ -1,4 +1,4 @@
-import React, { MouseEvent } from 'react';
+import React, { MouseEvent, useState } from 'react';
 import { AnswerObject, total_Questions } from '../Pages/QuizPage';
 import '../styles/components/QuestionCard.css';
 
@@ -8,7 +8,8 @@ type Props = {
 	answers: string[];
 	callback: (e: MouseEvent<HTMLButtonElement>) => void;
 	userAnswer: AnswerObject | undefined;
-	userNumber : number
+	userNumber: number;
+	userClick: string;
 };
 
 const QuestionCard: React.FC<Props> = ({
@@ -16,10 +17,22 @@ const QuestionCard: React.FC<Props> = ({
 	answers,
 	callback,
 	userAnswer,
-	userNumber
+	userNumber,
+	userClick,
 }) => {
+	const checkAnswerStatus = () => {
+		if (userClick === userAnswer?.correctAnswer) {
+			return 'btn__correct';
+		} else if (userClick !== userAnswer?.correctAnswer) {
+			return 'btn__wrong';
+		} else {
+			return null;
+		}
+	};
 	return (
-		<div className={`quiz__card ${userNumber  === total_Questions ? "hide" : null}`}>
+		<div
+			className={`quiz__card ${userNumber === total_Questions ? 'hide' : null}`}
+		>
 			<p
 				dangerouslySetInnerHTML={{ __html: question }}
 				className='card__question'
@@ -31,7 +44,8 @@ const QuestionCard: React.FC<Props> = ({
 							disabled={userAnswer ? true : false}
 							value={answer}
 							onClick={callback}
-							className={`card__btn `}
+							className={`card__btn ${checkAnswerStatus()}`}
+							name={answer}
 						>
 							<span dangerouslySetInnerHTML={{ __html: answer }} />
 						</button>

@@ -22,6 +22,7 @@ function QuizPage() {
 	const [score, setScore] = useState(0);
 	const [gameOver, setGameOver] = useState(true);
 	const [userAnswers, setUserAnswers] = useState<AnswerObject[]>([]);
+	const [click, setClick] = useState("");
 
 	// console.log(fetchQuizQuestions(total_Questions, Diffculty.EASY));
 	// console.log(questions);
@@ -48,6 +49,8 @@ function QuizPage() {
 
 	// BTN ftn that shows answer
 	const checkAnswer = (e: MouseEvent<HTMLButtonElement>) => {
+		setClick(e.currentTarget.name);
+		{console.log(click)}
 		if (!gameOver) {
 			// Users answer
 			const answer = e.currentTarget.value;
@@ -115,6 +118,7 @@ function QuizPage() {
 					userAnswer={userAnswers ? userAnswers[number] : undefined}
 					callback={checkAnswer}
 					userNumber={userAnswers.length}
+					userClick = {click}
 				/>
 			)}
 
@@ -143,7 +147,7 @@ function QuizPage() {
 				<div className='analysis'>
 					<div className='analysis__score'>Score</div>
 					<h1 className='score'>{score * 10}%</h1>
-					<div className='anaysis__remark'>
+					<div className='analysis__remark'>
 						{(() => {
 							if (score * 10 <= 40) {
 								return (

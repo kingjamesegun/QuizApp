@@ -1,27 +1,47 @@
-.quiz__card{
-    padding: 0 2%;
-    .card__question{
-        color: #0F0744;;
-        font-size: 20px;
-        text-align: center;
-    }
-    .card__answer{
-        margin: 2% 5%;
-        .answer{
-            margin: 20px 0;
-            .card__btn{
-                width: 100%;
-                text-align: left;
-                padding: 0 20px;
-                height: 60px;
-                border-radius: 5px;
-                background-color: #EEF2FA;
-                border: 1px solid #0F0744;
-            }
-        }
-    }
+.quiz__card {
+	padding: 0 2%;
+	.card__question {
+		color: #0f0744;
+		font-size: 20px;
+		text-align: center;
+	}
+	.card__answer {
+		margin: 2% 5%;
+		.answer {
+			margin: 20px 0;
+			.card__btn {
+				width: 100%;
+				text-align: left;
+				padding: 0 20px;
+				height: 60px;
+				border-radius: 5px;
+				background-color: #eef2fa;
+				border: 1px solid #0f0744;
+			}
+			.btn__correct {
+				background-color: #0e812e;
+				color: #fff;
+				width: 100%;
+				text-align: left;
+				padding: 0 20px;
+				height: 60px;
+				border-radius: 5px;
+				border: #0e812e;
+			}
+			.btn__wrong {
+				background-color: #f82121;
+				color: #fff;
+				width: 100%;
+				text-align: left;
+				padding: 0 20px;
+				height: 60px;
+				border-radius: 5px;
+				border: #f82121;
+			}
+		}
+	}
 }
 
-.hide{
-    display: none;
+.hide {
+	display: none;
 }

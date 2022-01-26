@@ -46,7 +46,53 @@
   border: 1px solid #F26335;
 }
 .quiz .analysis {
-  width: 50%;
-  margin: 0 auto;
-  box-shadow: 2px 2px;
+  width: 30%;
+  margin: 0% auto;
+  padding: 30px 5px;
+  box-shadow: 2px 2px 0px #000000;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid #fafafa;
+}
+.quiz .analysis .analysis__score {
+  font-weight: bold;
+}
+.quiz .analysis .score {
+  color: #F26335;
+  font-size: 120px;
+}
+.quiz .analysis .analysis__remark {
+  font-weight: bold;
+}
+.quiz .analysis .analysis__remark .remark__bad {
+  color: #f11212;
+}
+.quiz .analysis .analysis__remark .remark__better {
+  color: #F26335;
+}
+.quiz .analysis .analysis__remark .remark__good {
+  color: #0E812E;
+}
+.quiz .analysis .analysis__mark {
+  margin-top: 20px;
+}
+.quiz .analysis .analysis__mark .mark__title {
+  font-weight: 500;
+}
+.quiz .analysis .analysis__mark .mark__info {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 20px;
+}
+.quiz .analysis .play__again {
+  margin-top: 10px;
+}
+.quiz .analysis .play__again .again__btn {
+  color: #fff;
+  background-color: #F26335;
+  border: none;
+  padding: 10px 40px;
+  border-radius: 5px;
+  margin-top: 20px;
 }/*# sourceMappingURL=Quiz.css.map */
