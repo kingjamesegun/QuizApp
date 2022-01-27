@@ -4,6 +4,7 @@ import Navbar from './compoents/Navbar';
 import HomePage from './Pages/HomePage';
 import QuizPage from './Pages/QuizPage';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import HelpCenter from './Pages/HelpCenter';
 
 function App() {
 	const startTrivia = () => {};
@@ -18,6 +19,9 @@ function App() {
 			</Route>
 			<Route path='/quiz'>
 				<QuizPage />
+			</Route>
+			<Route path='/help_center'>
+				<HelpCenter/>
 			</Route>
 		</Router>
 	);

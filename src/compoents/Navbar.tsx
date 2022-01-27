@@ -3,6 +3,7 @@ import Logo from '../assets/Logo.svg';
 import Bar from '../assets/bar.svg';
 import CloseBar from '../assets/close.svg';
 import '../styles/Navbar.css';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
 	const [toogle, setToggle] = useState(false);
@@ -32,13 +33,13 @@ function Navbar() {
 			<div className={toogleClass}>
 				<ul className='nav__ul'>
 					<li className='nav__li'>
-						<a href='#'>Contact US</a>
+						<Link to='contact_us'>Contact Us</Link>
 					</li>
 					<li className='nav__li'>
-						<a href='#'>Help Center</a>
+						<Link to='help_center'>Help Center</Link>
 					</li>
 					<li className='nav__li btn__demo'>
-						<a href='#'>Play Demo</a>
+						<Link to='quiz'>PlayDemo</Link>
 					</li>
 				</ul>
 			</div>

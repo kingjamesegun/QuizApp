@@ -22,7 +22,7 @@ function QuizPage() {
 	const [score, setScore] = useState(0);
 	const [gameOver, setGameOver] = useState(true);
 	const [userAnswers, setUserAnswers] = useState<AnswerObject[]>([]);
-	const [click, setClick] = useState("");
+	const [clicked, setClicked] = useState('');
 
 	// console.log(fetchQuizQuestions(total_Questions, Diffculty.EASY));
 	// console.log(questions);
@@ -49,8 +49,10 @@ function QuizPage() {
 
 	// BTN ftn that shows answer
 	const checkAnswer = (e: MouseEvent<HTMLButtonElement>) => {
-		setClick(e.currentTarget.name);
-		{console.log(click)}
+		setClicked(e.currentTarget.name);
+
+		console.log(clicked);
+
 		if (!gameOver) {
 			// Users answer
 			const answer = e.currentTarget.value;
@@ -98,7 +100,11 @@ function QuizPage() {
 			) : null}
 
 			{!gameOver && !loading ? (
-				<p className={`quiz__score ${userAnswers.length === total_Questions ? "hide" : null}`}>
+				<p
+					className={`quiz__score ${
+						userAnswers.length === total_Questions ? 'hide' : null
+					}`}
+				>
 					Score:{score}/{total_Questions}
 				</p>
 			) : null}
@@ -118,7 +124,7 @@ function QuizPage() {
 					userAnswer={userAnswers ? userAnswers[number] : undefined}
 					callback={checkAnswer}
 					userNumber={userAnswers.length}
-					userClick = {click}
+					userClick={clicked}
 				/>
 			)}
 

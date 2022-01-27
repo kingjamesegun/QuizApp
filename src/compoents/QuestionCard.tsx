@@ -20,15 +20,17 @@ const QuestionCard: React.FC<Props> = ({
 	userNumber,
 	userClick,
 }) => {
+
 	const checkAnswerStatus = () => {
 		if (userClick === userAnswer?.correctAnswer) {
 			return 'btn__correct';
 		} else if (userClick !== userAnswer?.correctAnswer) {
 			return 'btn__wrong';
 		} else {
-			return null;
+			return 'card__btn';
 		}
 	};
+
 	return (
 		<div
 			className={`quiz__card ${userNumber === total_Questions ? 'hide' : null}`}
@@ -38,14 +40,14 @@ const QuestionCard: React.FC<Props> = ({
 				className='card__question'
 			/>
 			<div className='card__answer row'>
-				{answers.map((answer) => (
+				{answers.map((answer, index) => (
 					<div key={answer} className='answer col-lg-6'>
 						<button
 							disabled={userAnswer ? true : false}
 							value={answer}
 							onClick={callback}
-							className={`card__btn ${checkAnswerStatus()}`}
-							name={answer}
+							className={`card__btn `}
+							name={`${answer}`}
 						>
 							<span dangerouslySetInnerHTML={{ __html: answer }} />
 						</button>
