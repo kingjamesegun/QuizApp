@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -34,5 +34,25 @@
   }
   to {
     transform: rotate(360deg);
+  }
+} */
+
+
+.found{
+  text-align: center;
+}
+.found h3{
+  padding-top: 30px;
+  color: #0F0744;
+}
+@media(max-width: 1024px){
+  .found img{
+    width: 80%;
+    padding-top: 50px ;
+  }
+}
+@media(max-width: 425px){
+  .found img{
+    padding-top: 120px ;
   }
 }

@@ -54,6 +54,18 @@
   border-radius: 10px;
   border: 1px solid #fafafa;
 }
+@media (max-width: 1024px) {
+  .quiz .analysis {
+    width: 50%;
+  }
+}
+@media (max-width: 425px) {
+  .quiz .analysis {
+    width: 100%;
+    box-shadow: none;
+    padding: 70px 10px;
+  }
+}
 .quiz .analysis .analysis__score {
   font-weight: bold;
 }
@@ -61,8 +73,18 @@
   color: #F26335;
   font-size: 120px;
 }
+@media (max-width: 425px) {
+  .quiz .analysis .score {
+    font-size: 180px;
+  }
+}
 .quiz .analysis .analysis__remark {
   font-weight: bold;
+}
+@media (max-width: 425px) {
+  .quiz .analysis .analysis__remark {
+    font-size: 22px;
+  }
 }
 .quiz .analysis .analysis__remark .remark__bad {
   color: #f11212;
@@ -76,6 +98,12 @@
 .quiz .analysis .analysis__mark {
   margin-top: 20px;
 }
+@media (max-width: 425px) {
+  .quiz .analysis .analysis__mark {
+    margin-top: 40px;
+    font-size: 18px;
+  }
+}
 .quiz .analysis .analysis__mark .mark__title {
   font-weight: 500;
 }
@@ -84,6 +112,12 @@
   display: flex;
   justify-content: space-between;
   margin: 10px 20px;
+}
+@media (max-width: 425px) {
+  .quiz .analysis .analysis__mark .mark__info {
+    font-size: 18px;
+    margin: 20px 0px;
+  }
 }
 .quiz .analysis .play__again {
   margin-top: 10px;
@@ -95,4 +129,9 @@
   padding: 10px 40px;
   border-radius: 5px;
   margin-top: 20px;
+}
+@media (max-width: 425px) {
+  .quiz .analysis .play__again .again__btn {
+    padding: 20px 70px;
+  }
 }/*# sourceMappingURL=Quiz.css.map */

@@ -8,12 +8,15 @@
 	}
 	.nav__text {
 		margin: 30px 50px;
+		@media(max-width: 425px){
+			margin: 10px 20px;
+		}
 	}
 	.nav__bar {
 		display: none;
 		position: absolute;
 		top: 20px;
-		right: 30px;
+		right: 10px;
 		@media (max-width: 425px) {
 			display: flex;
 		}
