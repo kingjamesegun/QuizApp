@@ -20,9 +20,11 @@ function Navbar() {
 
 	return (
 		<nav className='navbar'>
-			<div className='nav__text'>
-				<img src={Logo} alt='Logo' />
-			</div>
+			<Link to='/'>
+				<div className='nav__text'>
+					<img src={Logo} alt='Logo' />
+				</div>
+			</Link>
 			<div className='nav__bar' onClick={handleBarClick}>
 				{toogle ? (
 					<img src={CloseBar} alt='close' />
