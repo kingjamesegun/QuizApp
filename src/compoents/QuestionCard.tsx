@@ -1,4 +1,4 @@
-import React, { MouseEvent, useState } from 'react';
+import React, { MouseEvent } from 'react';
 import { AnswerObject, total_Questions } from '../Pages/QuizPage';
 import '../styles/components/QuestionCard.css';
 
@@ -21,15 +21,15 @@ const QuestionCard: React.FC<Props> = ({
 	userClick,
 }) => {
 
-	const checkAnswerStatus = () => {
-		if (userClick === userAnswer?.correctAnswer) {
-			return 'btn__correct';
-		} else if (userClick !== userAnswer?.correctAnswer) {
-			return 'btn__wrong';
-		} else {
-			return 'card__btn';
-		}
-	};
+	// const checkAnswerStatus = () => {
+	// 	if (userClick === userAnswer?.correctAnswer) {
+	// 		return 'btn__correct';
+	// 	} else if (userClick !== userAnswer?.correctAnswer) {
+	// 		return 'btn__wrong';
+	// 	} else {
+	// 		return 'card__btn';
+	// 	}
+	// };
 
 	return (
 		<div

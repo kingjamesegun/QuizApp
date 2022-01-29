@@ -8,10 +8,6 @@ import HelpCenter from './Pages/HelpCenter';
 import PageNotFound from './Pages/PageNotFound';
 
 function App() {
-	const startTrivia = () => {};
-	const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {};
-
-	const nextQuestion = () => {};
 	return (
 		<Router>
 			<Navbar />
