@@ -113,7 +113,7 @@ function QuizPage() {
 			{!gameOver && loading && (
 				<div className='loader'>
 					<img src={BallIcon} alt='Loader' />
-					<p className='quiz__p'>Let's Go</p>
+					<h1 className='quiz__p'>Let's Go</h1>
 				</div>
 			)}
 

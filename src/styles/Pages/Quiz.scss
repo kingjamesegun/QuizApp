@@ -2,9 +2,15 @@
 	padding: 2% 5%;
 	.quiz__start {
 		text-align: center;
+        @media(max-width: 425px){
+            padding-top: 90px;
+        }
 		.start__h3 {
 			margin-top: 10px;
 			color: #0f0744;
+            @media(max-width: 425px){
+                margin-top: 30px;
+            }
 		}
 		.start__btn {
             padding: 8px 30px;
@@ -23,6 +29,12 @@
     .loader{
         text-align: center;
         margin-top: 40px;
+        @media(max-width: 425px){
+            margin-top: 200px;
+        }
+        .quiz__p{
+            font-weight: bold;
+        }
     }
     .quiz__function{
         display: flex;
